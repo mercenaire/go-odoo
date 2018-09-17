@@ -150,3 +150,7 @@ func (c *Client) update(model string, ids []int64, fields map[string]interface{}
 func (c *Client) delete(model string, ids []int64) error {
 	return c.Delete(model, []interface{}{ids})
 }
+
+func (c *Client) doSomethingForRuma(model string) error {
+	return c.DoRequest("do_something_for_ruma", model, nil, nil, nil)
+}

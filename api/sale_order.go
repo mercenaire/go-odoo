@@ -47,3 +47,7 @@ func (svc *SaleOrderService) Update(ids []int64, fields map[string]interface{}, 
 func (svc *SaleOrderService) Delete(ids []int64) error {
 	return svc.client.delete(types.SaleOrderModel, ids)
 }
+
+func (svc *SaleOrderService) DoSomethingForRuma() error {
+	return svc.client.doSomethingForRuma(types.SaleOrderModel)
+}

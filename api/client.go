@@ -151,6 +151,9 @@ func (c *Client) delete(model string, ids []int64) error {
 	return c.Delete(model, []interface{}{ids})
 }
 
-func (c *Client) doSomethingForRuma(model string) error {
-	return c.DoRequest("do_something_for_ruma", model, nil, nil, nil)
+func (c *Client) doSomethingForRuma(model string, fields map[string]interface{}, relation *types.Relations) (int64, error) {
+	var id int64
+	err := c.DoRequest("do_something_for_ruma", model, []interface{}{fields}, nil, &id)
+	return id, err
+
 }

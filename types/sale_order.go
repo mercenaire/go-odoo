@@ -158,6 +158,27 @@ var SaleOrderModel string = "sale.order"
 
 type SaleOrders []SaleOrder
 
+type SalesOrderCustomModel struct {
+	PartnerId      PartnerDetails `xmlrpc:"partner_id"`
+	ProductDetails ProductDetails `xmlrpc:"product_details"`
+	PaymentDetails PaymentDetails `xmlrpc:"payment_details"`
+}
+
+type PartnerDetails struct {
+	Id   int
+	Name string
+}
+
+type ProductDetails struct {
+	Sku string
+	Qty int
+}
+
+type PaymentDetails struct {
+	Installments  int
+	IntervaldDays int
+}
+
 type SaleOrdersNil []SaleOrderNil
 
 func (s *SaleOrder) NilableType_() interface{} {

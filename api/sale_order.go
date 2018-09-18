@@ -48,6 +48,6 @@ func (svc *SaleOrderService) Delete(ids []int64) error {
 	return svc.client.delete(types.SaleOrderModel, ids)
 }
 
-func (svc *SaleOrderService) DoSomethingForRuma() error {
-	return svc.client.doSomethingForRuma(types.SaleOrderModel)
+func (svc *SaleOrderService) DoSomethingForRuma(fields map[string]interface{}, relations *types.Relations) (int64, error) {
+	return svc.client.doSomethingForRuma(types.SaleOrderModel, fields, relations)
 }

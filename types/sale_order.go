@@ -162,6 +162,7 @@ type SalesOrderCustomModel struct {
 	PartnerId      PartnerDetails `xmlrpc:"partner_id"`
 	ProductDetails ProductDetails `xmlrpc:"product_details"`
 	PaymentDetails PaymentDetails `xmlrpc:"payment_details"`
+	TestId         int            `xmlrpc:"test_id"`
 }
 
 type PartnerDetails struct {

@@ -165,6 +165,10 @@ type SalesOrderCustomModel struct {
 	TestId         int            `xmlrpc:"test_id"`
 }
 
+type SalesOrderModel struct {
+	ProtoBuf_Message []byte `xmlrpc:"protoBuf_message"`
+}
+
 type PartnerDetails struct {
 	Id   int
 	Name string
